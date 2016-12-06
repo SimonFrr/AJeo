@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title> AlainJuppéo </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+  
+<body>
+  <div class="container" style="text-align: center;">
+    <div class="col-xs-12">
+      <div class="jumbotron" style="margin-top: 30px;">
+        <div class="row">
+          <div class="col-md-6">
+            <h1>AlainJuppéo</h1>
+            <p>Que fait Alain Juppé en ce moment même ?</p>
+            <p>---</p>
+            <p id="activity-displayer"></p>
+          </div>
+          <div class="col-md-6">
+            <img src="./juppe.jpg" style="max-width: 100%;">
+          </div>
+        </div>
+      </div>
+      <p>Made with love by the <a href="http://calchemise.com" target="_blank">Calchemise</a> crew.</p>
+    </div>
+  </div>
+
+  <script>
+
+    const activities = [
+      "Alain Juppé regarde Motus, il aime bien Thierry Beccaro.",
+      "Alain Juppé joue au Scrabble.",
+      "Alain Juppé est parti pêcher.",
+      "Alain Juppé travaille à une nouvelle traduction de Virgile.",
+      "Alain Juppé est parti s'acheter un iPad.",
+      "Alain Juppé cherche un covoiturage pour Angoulême.",
+      "Alain Juppé fait une partie de FIFA.",
+      "Alain Juppé réfléchit à ce qu'il va commander à Deliveroo.",
+      "Alain Juppé fait un tennis avec Jean-François Copé.",
+      "Alain Juppé traîne sur 9gag.",
+      "Alain Juppé s'ennuie dans son salon.",
+      "Alain Juppé écoute un peu d'opéra pour se donner un genre.",
+      "Alain Juppé laisse des commentaires constructifs sur des articles du Monde.",
+      "Alain Juppé résilie son abonnement à la salle de gym.",
+      "Alain Juppé se remémore quelques bons moments dans le jardin.",
+      "Alain Juppé joue aux legos en cachette.",
+      "Alain Juppé joue la Lettre à Élise au piano.",
+      "Alain Juppé se creuse la tête pour les cadeaux de Noël.",
+      "Alain Juppé pense à l'avenir, allongé sur son lit.",
+      "Alain Juppé écoute Nekfeu, mais ne comprend pas toutes les paroles.",
+      "Alain Juppé lit Sénèque et se dit que vraiment, ça défonce.",
+      "Alain Juppé mange une super pêche.",
+      "Alain Juppé regarde où en est le Vendée Globe.",
+      "Alain Juppé cherche son slip de bain, il voudrait aller à la piscine.",
+      "Alain Juppé se demande s'il ne se laisserait pas pousser la barbe.",
+      "Alain Juppé regarde s'il trouve un bon vélo sur leboncoin.",
+      "Alain Juppé prend un thé, avec un petit carré de chocolat.",
+      "Alain Juppé fait un peu d'aquarelle, mais n'est pas très satisfait du résultat.",
+      "Alain Juppé prend un bain avec un peu de mousse.",
+      "Alain Juppé se sert un verre de blanc.",
+      "Alain Juppé s'inscrit à Pôle Emploi.",
+      "Alain Juppé regarde Dans la peau de Jacques Chirac.",
+      "Alain Juppé fait un puzzle.",
+      "Alain Juppé lit le dictionnaire.",
+      "Alain Juppé déclame des vers.",
+      "Alain Juppé se promène en robe de chambre.",
+      "Alain Juppé mate un zap de spion.",
+      "Alain Juppé fait une petite sieste, même s'il n'est pas vraiment fatigué.",
+      "Alain Juppé démarre la trilogie du Seigneur des Anneaux.",
+      "Alain Juppé recherche un plombier dans l'annuaire.",
+      "Alain Juppé réalise qu'il n'a jamais aimé les poireaux vinaigrette.",
+      "Alain Juppé ouvre un compte à Monaco.",
+      "Alain Juppé tond sa pelouse.",
+      "Alain Juppé trie ses disquettes.",
+      "Alain Juppé change de marque de brosse à dents.",
+      "Alain Juppé s'épile le bas du dos.",
+      "Alain Juppé répare son appareil à raclette.",
+      "Alain Juppé ouvre un spam.",
+      "Alain Juppé rentre sa chemise dans son pantalon.",
+      "Alain Juppé chante Carmen de Bizet sous sa douche.",
+      "Alain Juppé se fait faire un peeling.",
+      "Alain Juppé frissone sur Doctissimo.",
+      "Alain Juppé télécharge Instagram.",
+      "Alain Juppé astique ses bibelots africains.",
+      "Alain Juppé joue au solitaire.",
+      "Alain Juppé rate son code PIN trois fois et ne connaît pas son code PUC.",
+      "Alain Juppé est surpris par la pertinence des recommandations de YouTube."
+    ];
+
+    window.onload = function () {
+      $('#activity-displayer').text(getActivityText());
+    }
+
+    function getActivityText () {
+      const hours = (new Date).getHours();
+
+      if (hours >= 1 && hours <= 7) {
+        return "Alain Juppé dort.";
+      }
+
+      return activities[parseInt(Math.random() * activities.length)];
+    }
+
+  </script>
+</body>
+</html>
